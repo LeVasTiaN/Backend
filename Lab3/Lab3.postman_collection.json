@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "c0d307c7-c526-4e6e-909e-a46a2bbbdaca",
+		"name": "Lab3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50809168",
+		"_collection_link": "https://lavrik-2005inbox-1512651.postman.co/workspace/LeVasTiaN's-Workspace~1692ecef-63e6-45b8-8f0e-1dc89f4b0581/collection/50809168-c0d307c7-c526-4e6e-909e-a46a2bbbdaca?action=share&source=collection_link&creator=50809168"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"name\": \"FlowUser_{{$randomInt}}\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{database}}/user",
+					"host": [
+						"{{database}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{database}}/users",
+					"host": [
+						"{{database}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a General Category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"name\": \"General Public Category\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{database}}/category",
+					"host": [
+						"{{database}}"
+					],
+					"path": [
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a Custom Category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"A Secret Category\",\r\n  \"user_id\": \"{{userId}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{database}}/category",
+					"host": [
+						"{{database}}"
+					],
+					"path": [
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All (Anonymous)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{database}}/category",
+					"host": [
+						"{{database}}"
+					],
+					"path": [
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get as User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{database}}/category?user_id={{userId}}",
+					"host": [
+						"{{database}}"
+					],
+					"path": [
+						"category"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "{{userId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
