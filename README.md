@@ -4,7 +4,7 @@ This repository contains the laboratory assignments for the Server Software Deve
 
 ## Repository Structure and README files of each separate one:
 
-- **Lab1/**: https://github.com/LeVasTiaN/Backend/Lab1/Lab1.md
+- **Lab1/**: https://github.com/LeVasTiaN/Backend/blob/main/Lab1/Lab1.md
 - **Lab2/**:
 - **Lab3/**:
 - **Lab4/**:
