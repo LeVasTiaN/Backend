@@ -1,13 +1,25 @@
-version: '3'
-
 services:
-  lab2-app:
-    restart: always
+  db:
+    image: postgres:15.4-alpine3.18
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: finance_db
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  modules:
     build:
       context: .
       dockerfile: Dockerfile
     environment:
+      DATABASE_URL: postgresql://user:password@db:5432/finance_db
+      PORT: 5000
       FLASK_APP: modules
-      PORT: "5000"
     ports:
       - "5000:5000"
+    depends_on:
+      - db
+
+volumes:
+  db_data:
