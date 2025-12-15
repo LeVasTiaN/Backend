@@ -1,6 +1,6 @@
 from flask import jsonify, request, abort
-from Lab2 import app
-from Lab2.models import users, categories, records
+from modules import app
+from modules.models import users, categories, records
 import uuid
 from datetime import datetime
 
