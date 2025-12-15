@@ -4,4 +4,4 @@ COPY requirements.txt .
 RUN python -m pip install -r requirements.txt
 COPY . .
 ENV FLASK_APP=.
-CMD flask --app modules run -h 0.0.0.0 -p $PORT
+CMD flask db upgrade && flask --app modules run --host 0.0.0.0 -p $PORT
